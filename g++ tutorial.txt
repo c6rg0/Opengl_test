@@ -1,0 +1,7 @@
+How to use g++ - which is a compiler for c++ - in terminal:
+
+$ g++ file.cpp -o file.exe
+
+Then type"./file.exe" into terminal to run it. 
+
+https://www.geeksforgeeks.org/cpp/how-to-compile-a-cpp-program-using-gcc/
