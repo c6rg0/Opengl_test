@@ -1,8 +1,6 @@
-//main.cpp
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
-using namespace std;
 
 void processInput(GLFWwindow *window)
 {
@@ -15,10 +13,11 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 	glViewport(0, 0, width, height);
 }
 
-int main() {
+int main()
+{
 	// Initialize GLFW
 	if (!glfwInit()){
-		cerr << "GLFW initialization failed!" << endl;
+		std::cerr << "GLFW initialization failed!" << std::endl;
 		return -1;
 	}
 	
@@ -28,7 +27,7 @@ int main() {
 	window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
 	if (!window)
 	{
-		cout << "Failed to create GLFW window" << endl;
+		std::cout << "Failed to create GLFW window" << std::endl;
 		glfwTerminate();
 		return -1;
 	}
@@ -38,19 +37,16 @@ int main() {
 
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
-		cout << "Failed to initialize GLAD" << endl;
+		std::cout << "Failed to initialize GLAD" << std::endl;
 		return -1;
 	}
 
 	glViewport(0, 0, 640, 480);
-
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-
 	
 	/*Loop until the user closes the window */
 	while (!glfwWindowShouldClose(window))
 	{	
-
 		processInput(window);
 
 		/* Render here */
@@ -66,5 +62,4 @@ int main() {
 
 	glfwTerminate();
 	return 0;
-
 }	
